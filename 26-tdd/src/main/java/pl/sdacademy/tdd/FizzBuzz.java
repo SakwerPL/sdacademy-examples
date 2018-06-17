@@ -10,35 +10,31 @@ class FizzBuzz {
 	 * @return the string according to the specification
 	 */
 	static String msg(int number) {
-switch (number){
-	case 0: return "FizzBuzz";
-	case 1: return "1";
-	case 2: return "Wizz";
-	case 3: return "FizzWizz";
-	case 5: return "BuzzWizz";
-	default: break;
-}
+		switch (number) {
+			case 0: return "FizzBuzz";
+			case 1: return "1";
+			case 2:	return "Wizz";
+			case 3: return "FizzWizz";
+			case 5:	return "BuzzWizz";
+			default: break;
+		}
 		for (int i = 2; i < number; i++) {
 			if (number % i == 0) {
 				if (number % 3 == 0 && number % 5 == 0) {
 					return "FizzBuzz";
 				}
-
 				if (number % 3 == 0) {
 					return "Fizz";
 				}
 				if (number % 5 == 0) {
 					return "Buzz";
 				}
-
 				return String.valueOf(number);
-
-
 			}
-
 		}
 		return "Wizz";
-	}}
+	}
+}
 
 
 
