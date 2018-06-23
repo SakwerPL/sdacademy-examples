@@ -1,5 +1,7 @@
 package pl.sdacademy.hr;
 
+import java.util.stream.Stream;
+
 class Employee {
 	private final String firstName;
 	private final String dateOfBirth;
@@ -28,7 +30,12 @@ class Employee {
 
 	@Override
 	public String toString() {
-		return firstName + " " + lastName + " " +dateOfBirth;
+		return firstName + " " + lastName + " " + dateOfBirth;
 	}
 
+	public boolean matches(String phrase) {
+		return firstName.contains(phrase)
+			|| lastName.contains(phrase)
+			|| dateOfBirth.contains(phrase);
+	}
 }
