@@ -46,7 +46,7 @@ class HrManager {
 	}
 
 
-	public List<Employee> sortByFirstNameWithBubble() { //przerwa???
+	public List<Employee> sortByFirstNameWithBubble() {
 		for (int j = 0; j < allEmployees.size() - 1; j++) {
 			for (int i = 0; i < allEmployees.size() - 1 - j; i++) {
 				if (allEmployees.get(i).getFirstName().compareTo(allEmployees.get(i + 1).getFirstName
