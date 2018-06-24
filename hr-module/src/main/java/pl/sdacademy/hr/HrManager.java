@@ -46,11 +46,17 @@ class HrManager {
 	}
 
 
-
-	// bierzemy wcześniej utworzoną listę allEmployee.otwieramy strem, czytaj ciąg wszystkiego z tej listy.
-	// Wszystkich. Dając możliwość operowania na każdym elemencie.
-	// filtrujemy tworząc lambdę. Tworzymy lokalnie zmienną employee typu Employee.
-	// geterem wyciągamy wszystkich pracowników i sprawdzamy czy w ich lastName jest nasz lastName
-	// po czym collect (zbieramy) w listę, a return ją zwraca.
-
+	public List<Employee> sortByFirstNameWithBubble() { //przerwa???
+		for (int j = 0; j < allEmployees.size() - 1; j++) {
+			for (int i = 0; i < allEmployees.size() - 1 - j; i++) {
+				if (allEmployees.get(i).getFirstName().compareTo(allEmployees.get(i + 1).getFirstName
+					()) < 0) {
+					Employee temp = allEmployees.get(i);
+					allEmployees.set(i, allEmployees.get(i + 1));
+					allEmployees.set(i + 1, temp);
+				}
+			}
+		}
+		return allEmployees;
+	}
 }
