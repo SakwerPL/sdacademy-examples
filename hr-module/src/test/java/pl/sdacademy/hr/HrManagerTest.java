@@ -165,4 +165,19 @@ class HrManagerTest {
 		assertThat(foundEmployees).containsOnly(jurgenBlitz,stefan);
 	}
 
+	@DisplayName("should sort by first name ascending")
+	@Test
+	void test10() {
+		//given
+		Employee adam = hrManager.create("Adam", "Miauczyński", "01-12-1960");
+		Employee Zenon = hrManager.create("Zenon", "Miauczyński", "13-12-1666");
+		Employee jurgenBlitz = hrManager.create("Jurgen", "Blitz", "13-12-1666");
+
+		//when
+		List<Employee> sortEmployees = hrManager.sortByFirstName();
+
+		//then
+		assertThat(sortEmployees).containsExactly(adam,jurgenBlitz,Zenon);
+	}
+
 }

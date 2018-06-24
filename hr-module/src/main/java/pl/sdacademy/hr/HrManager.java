@@ -2,6 +2,7 @@ package pl.sdacademy.hr;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -35,11 +36,17 @@ class HrManager {
 
 	public List<Employee> searchByPhrase(String phrase) {
 
-		return allEmployees.stream().filter(employee ->
-				   employee.matches(phrase))
-				.collect(Collectors.toList());
-
+		return allEmployees.stream().filter(employee -> employee.matches(phrase)).collect(Collectors.toList());
 	}
+
+	public List<Employee> sortByFirstName() {
+		/*return allEmployees.stream().sorted(Comparator.comparing(Employee::getFirstName)).collect(Collectors
+			.toList());*/
+		return allEmployees.stream().sorted().collect(Collectors.toList());
+	}
+
+
+
 	// bierzemy wcześniej utworzoną listę allEmployee.otwieramy strem, czytaj ciąg wszystkiego z tej listy.
 	// Wszystkich. Dając możliwość operowania na każdym elemencie.
 	// filtrujemy tworząc lambdę. Tworzymy lokalnie zmienną employee typu Employee.
