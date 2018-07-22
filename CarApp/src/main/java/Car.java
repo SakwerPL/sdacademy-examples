@@ -1,10 +1,11 @@
-import lombok.Getter;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
 
 @RequiredArgsConstructor
 class Car {
+
+	@Getter
+	final String name;
 
 	@Setter
 	@Getter
@@ -14,7 +15,6 @@ class Car {
 	final int maxFuelLevel;
 
 	@Getter
-	@Setter
 	final FuelType fuelType;
 
 	@Setter

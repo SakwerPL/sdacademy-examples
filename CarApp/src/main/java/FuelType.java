@@ -1,6 +1,6 @@
 enum FuelType {
 	PB,
-	Oil,
-	Electricety;
+	OIL,
+	ELECTRICITY;
 
 }

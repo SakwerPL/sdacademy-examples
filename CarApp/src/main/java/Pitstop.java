@@ -11,6 +11,8 @@ import lombok.RequiredArgsConstructor;
 	@NonNull
 	CarMyjka myjka;
 
+
+
 	boolean fuelCheck(Car car){
 		return car.getCurrentFuelLevel()<car.getFuelThreshold();
 	}
@@ -22,19 +24,23 @@ import lombok.RequiredArgsConstructor;
 
 	boolean cleanCheck(Car car) {
 
-		return car.getCleanValue()>car.getCleanThreshold();
+		return car.getCleanValue()<car.getCleanThreshold();
 	}
 
-	public void pitstop(Car car) {
+	 MadeServices pitstop(Car car) {
+		MadeServices madeServices= new MadeServices();
 		if (fuelCheck(car)){
 			gasStation.fillTofull4Free(car);
+			madeServices.setFuelService(true);
 		}
-
 		if (wheelCheck(car)){
 			wulkanizator.changeTires4Free(car);
+			madeServices.setTiresService(true);
 		}
 		if (cleanCheck(car)){
 			myjka.cleanTheCar4Free(car);
+			madeServices.setCleanService(true);
 		}
+		return madeServices;
 	}
 }

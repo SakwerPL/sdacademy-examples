@@ -11,7 +11,7 @@ class VulcanizerTest {
 	@BeforeEach
 	void setUp() {
 		carThreshold = new CarThresholds(10,5,90);
-		tadeuszCar = new Car(65,FuelType.PB,carThreshold);
+		tadeuszCar = new Car("tadeusz Car",65,FuelType.PB,carThreshold);
 		wulkanizator = new Vulcanizer();
 	}
 

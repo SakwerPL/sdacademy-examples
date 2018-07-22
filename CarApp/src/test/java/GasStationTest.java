@@ -13,14 +13,15 @@ class GasStationTest {
 	GasStation shell;
 	CarThresholds carThreshold;
 	Map<FuelType,Double> shellPriceses = new HashMap<>();
+
 	@BeforeEach
 	void setUp() {
 	carThreshold = new CarThresholds(10,5,90);
-	tadeuszCar = new Car(65,FuelType.PB,carThreshold);
+	tadeuszCar = new Car("tadeusz Car",65,FuelType.PB,carThreshold);
 	shell = new GasStation();
 	shellPriceses.put(FuelType.PB,5.0);
-	shellPriceses.put(FuelType.Oil,4.0);
-	shellPriceses.put(FuelType.Electricety,0.5);
+	shellPriceses.put(FuelType.OIL,4.0);
+	shellPriceses.put(FuelType.ELECTRICITY,0.5);
 	shell.setPrices4Liter(shellPriceses);
 	}
 
