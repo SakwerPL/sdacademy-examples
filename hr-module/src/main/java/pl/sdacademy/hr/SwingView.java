@@ -13,6 +13,7 @@ public class SwingView {
 		tableModel.addColumn("First Name");
 		tableModel.addColumn("Second Name");
 		tableModel.addColumn("Date of Birth");
+		adapter.sortByLastName(tableModel);
 
 		SwingUtilities.invokeLater(() -> {
 			// prepare the jframe

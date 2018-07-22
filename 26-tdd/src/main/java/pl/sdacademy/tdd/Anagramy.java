@@ -1,23 +1,37 @@
 package pl.sdacademy.tdd;
 
-import com.google.common.primitives.Chars;
-
 import java.util.HashSet;
+
 import java.util.Set;
 
 public class Anagramy {
 
 	public static Set<String> converter(String str) {
-		String[] cha = str.split("");
-		Set<String> anagram = new HashSet<>();
-		for (int i = 0; i < cha.length; i++) {
-			for (int j = 0; j < cha.length; j++) {
-				if (i != j) {
-					anagram.add(cha[i] + cha[j]);
-				}
+
+		Set<String> anagrams = new HashSet<>();
+		if (str.length()<=1){
+			anagrams.add(str);
+			return anagrams;
+		}
+		for (int i = 0; i < str.length(); i++) {
+
+			char tempChar = str.charAt(i);
+			Set<String> stringWithoutTemp = Anagramy.converter(stringWithoutTempChar(str, i));
+			for (String stringWithout:stringWithoutTemp){
+				anagrams.add(tempChar+stringWithout);
 			}
 		}
-		return anagram;
+		return anagrams;
+	}
 
+	private static String stringWithoutTempChar(String str, int i) {
+
+		if (i+1<str.length()) {
+			return str.substring(0, i) + str.substring(i + 1, (str.length()));
+		}
+
+		else {
+			return str.substring(0, i);
+		}
 	}
 }

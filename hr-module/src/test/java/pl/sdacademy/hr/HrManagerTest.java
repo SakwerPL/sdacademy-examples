@@ -1,9 +1,9 @@
-package pl.sdacademy.hr;
+	package pl.sdacademy.hr;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+	import org.junit.jupiter.api.Assertions;
+	import org.junit.jupiter.api.BeforeEach;
+	import org.junit.jupiter.api.DisplayName;
+	import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
@@ -209,7 +209,7 @@ class HrManagerTest {
 		assertThat(sortEmployees).containsExactly(sztefanMeyer,jurgenBlitz,adam);
 	}
 
-	@DisplayName("should sort four employees by first name descending") //malejaco
+	@DisplayName("should sort four employees by last name descending") //malejaco
 	@Test
 	void test13() {
 		//given
@@ -224,7 +224,5 @@ class HrManagerTest {
 		//then
 		assertThat(sortEmployees).containsExactly(zenonKruger,sztefanMeyer,jurgenBlitz,adam);
 	}
-
-
 
 }

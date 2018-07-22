@@ -33,6 +33,16 @@
 		<module>25-swing</module>
 		<module>26-tdd</module>
 		<module>hr-module</module>
+		<module>HR</module>
+		<module>printer</module>
+		<module>Fibonacci</module>
+		<module>InfiniteLoop</module>
+		<module>pizzaBuilder</module>
+		<module>Shape_most</module>
+		<module>Interpreter_Obliczenia</module>
+		<module>Mediator</module>
+		<module>Startegia</module>
+		<module>CarApp</module>
 	</modules>
 	<packaging>pom</packaging>
 	<name>sdacademy-examples</name>
@@ -55,6 +65,18 @@
 
 	<dependencies>
 		<!-- JUnit Jupiter dependencies -->
+		<!-- https://mvnrepository.com/artifact/org.javamoney/moneta -->
+		<dependency>
+			<groupId>org.javamoney</groupId>
+			<artifactId>moneta</artifactId>
+			<version>1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.0</version>
+			<scope>provided</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-api</artifactId>

@@ -1,6 +1,7 @@
 package pl.sdacademy.hr;
 
 import javax.swing.table.DefaultTableModel;
+import java.util.List;
 
 public class HrManagerSwingAdapter {
 	private HrManager hrManager;
@@ -14,4 +15,22 @@ public class HrManagerSwingAdapter {
 		Employee newEmployee = hrManager.create(firstName, lastName, dateOfBirth);
 		tableModel.addRow(new Object[]{newEmployee.getFirstName(), newEmployee.getLastName(), newEmployee.getDateOfBirth()});
 	}
+
+	private void addRow(DefaultTableModel tableModel, Employee newEmployee) {
+		tableModel.addRow(new Object[]{newEmployee.getFirstName(), newEmployee.getLastName(),
+			newEmployee
+			.getDateOfBirth() });
+	}
+
+	public void sortByLastName(DefaultTableModel tableModel) {
+	tableModel.getDataVector().clear();
+	List<Employee> sortedEmployee = hrManager.sortByFirstName();
+	for (Employee employee: sortedEmployee){
+	addRow(tableModel, employee);
+
+}
+
+	}
+
+
 }

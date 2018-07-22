@@ -1,67 +1,90 @@
 package pl.sdacademy.tdd;
 
-
-import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
+
 import org.junit.jupiter.api.Test;
+
+
+
+
 
 import java.util.Set;
 
+
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+
 public class AnagramyTest {
-	@Disabled
-	@DisplayName("for \"pies\" need \"siep\"")
+
+
+
+	@DisplayName("Should get 4 values for a word looo")
+
 	@Test
-	void pies() {
+
+	void Test1(){
+
 		//given
-		String str = "pies";
+
+		String word = "looo";
+
 		//when
-		Set<String> piescidelko = Anagramy.converter(str);
-		//than
-		Assertions.assertThat(piescidelko).contains("siep");
+
+		Set<String> anagrams = Anagramy.converter(word);
+
+		//then
+
+		assertThat(anagrams).containsOnly("looo","oloo","oolo","oool");
+
 	}
 
-	@Disabled
-	@DisplayName("for \"pies\" need \"epis\"")
+
+
+	@DisplayName("Should get 6 values for a word lool")
+
 	@Test
-	void epis() {
+
+	void Test2(){
+
 		//given
-		String str = "pies";
+
+		String word = "lool";
+
 		//when
-		Set<String> piescidelko = Anagramy.converter(str);
-		//than
-		Assertions.assertThat(piescidelko).contains("epis");
+
+		Set<String> anagrams = Anagramy.converter(word);
+
+		//then
+
+		assertThat(anagrams).containsOnly("lool","lolo","lloo","olol","ooll","ollo");
+
 	}
 
-	@DisplayName("for jo need all anagrams")
+
+
+	@DisplayName("Should get 4 values for a word kota")
+
 	@Test
-	void wszystkieJo() {
+
+	void Test3(){
+
 		//given
-		String str = "jo";
+
+		String word = "kota";
+
 		//when
-		Set<String> piescidelko = Anagramy.converter(str);
-		//than
-		Assertions.assertThat(piescidelko).containsOnly("oj", "jo");
-	}
-	@DisplayName("for oo need all anagrams")
-	@Test
-	void wszystkieOo() {
-		//given
-		String str = "oo";
-		//when
-		Set<String> piescidelko = Anagramy.converter(str);
-		//than
-		Assertions.assertThat(piescidelko).containsOnly("oo");
+
+		Set<String> anagrams = Anagramy.converter(word);
+
+		//then
+
+		assertThat(anagrams).containsOnly("kota","koat","kaot","kato","ktao","ktoa","tkoa","tkao","tako",
+
+			"taok","toka","toak","oakt","okta","okat","otka","oatk","otak","akto","akot","atok","atko",
+
+			"aotk","aokt");
+
 	}
 
-	@DisplayName("for kot need all anagrams")
-	@Test
-	void wszystkieKot() {
-		//given
-		String str = "kot";
-		//when
-		Set<String> piescidelko = Anagramy.converter(str);
-		//than
-		Assertions.assertThat(piescidelko).containsOnly("oo");
-	}
 }
