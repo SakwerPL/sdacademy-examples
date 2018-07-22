@@ -11,7 +11,7 @@ class GasStation {
 	double fillTofull(Car car) {
 
 		double payment = (car.getMaxFuelLevel()-car.getCurrentFuelLevel())*getPrices4Liter().get(car.getFuelType());
-		car.setCurrentFuelLevel(100);
+		car.setCurrentFuelLevel(car.getMaxFuelLevel());
 		return payment;
 	}
 
@@ -32,7 +32,7 @@ class GasStation {
 
 	void fillTofull4Free(Car car) {
 
-		car.setCurrentFuelLevel(100);
+		car.setCurrentFuelLevel(car.getMaxFuelLevel());
 	}
 
 }
